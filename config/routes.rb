@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'favorites/create'
+  get '/map_request', to: 'maps#map', as: 'map_request'
   get 'favorites/destroy'
   devise_for :users
   resources :users, only: [:show,:edit,:update,:index]

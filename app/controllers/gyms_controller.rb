@@ -1,15 +1,6 @@
 class GymsController < ApplicationController
   def index
     @gyms = Gym.all
-    
-
-  end
-
-  def new
-  end
-
-  def create
-   
   end
 
   def show
@@ -19,16 +10,16 @@ class GymsController < ApplicationController
     @gym_comments = @gym.gym_comments
   end
 
-  def edit
+  def map
+    results = Geocoder.search(params[:address])
+    @latlng = results.first.coordinates
+    respond_to do |format|
+      format.js
   end
-
-  def update
-  end
+end
 
   private
   def gym_params
     params.require(:gym).permit(:name,:address)
   end
-  
-
 end

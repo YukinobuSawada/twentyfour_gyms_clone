@@ -31,20 +31,42 @@
 	<% end %>
 
 	<h4>地図</h4>
-	<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIUJKjbrwk_AUnsjoEdD1U5KwghmjBgDQ&callback=initMap"></script>
-
-<script  type="text/javascript">
+	<script type="text/javascript">
   function initMap() {
-    var mapPosition = new google.maps.LatLng( <%= @gym.latitude %>,<%= @gym.longitude %> );//緯度経度
-    var map = new google.maps.Map(document.getElementById('gmap'), {
-    zoom: 17,//ズーム
-    center: mapPosition
-  });
+
+    var test ={lat: <%= @gym.latitude %>, lng: <%= @gym.longitude %>};
+    var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 15, 
+              center: test
+              });
+    var transitLayer = new google.maps.TransitLayer();
+    transitLayer.setMap(map);
+
     var contentString = '住所：<%= @gym.address %>';
-    var marker = new google.maps.Marker({
-    position: mapPosition,
-    map: map
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
     });
+
+    var marker = new google.maps.Marker({
+                  position:test,
+                  map: map,
+                  title: contentString
+                 });
+
+     marker.addListener('click', function() {
+       infowindow.open(map, marker);
+     });
   }
 </script>
-<div id="gmap"></div>
+
+
+<script async defer
+              src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDIUJKjbrwk_AUnsjoEdD1U5KwghmjBgDQ&callback=initMap">
+</script>
+
+<style type="text/css">
+  #map { height: 200px;
+         width: 70%;}
+</style>
+
+<div id="map"></div>
