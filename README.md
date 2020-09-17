@@ -1,24 +1,26 @@
-# README
+# 24ジム情報
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+24ジム情報は都内の各地域にある24ジムの店舗ごとの情報をまとめたサイトです。
 
-Things you may want to cover:
 
-* Ruby version
+### サイトテーマ
+24ジム情報投稿サイト
 
-* System dependencies
+### テーマを選んだ理由
+私はとあるフィットネスジの会員です。会員は全国の店舗を自由に使うことができます。ただ、店舗ごとに設置されているマシンや設備などが異なります。　
+例えば普段A店を利用している人が隣町にあるB店、あるいはC店を利用したいという場面があったとします。ただ、公式サイトを見てもそれぞれの店舗にどのようなマシンや設備があるかわかりません。
+そんなときこのようなサイトがあれば、どの店舗が自分のやりたいトレーニングにあっているかを知ることができます。
+実際、私自身もこのようなサイトがあれば便利だなと思う場面はたくさんあったので、自分で作ってみたいと考えました。
 
-* Configuration
+### ターゲットユーザ
+24ジムの会員
 
-* Database creation
+### 主な利用シーン
+それぞれの店舗にどのようなマシンや設備があるか調べたいとき
 
-* Database initialization
+## 設計書
 
-* How to run the test suite
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1lPzO9e5L1QnrlWctpYA_1_H0bAutA61ju_YcvUKu0U0/edit?usp=sharing
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
