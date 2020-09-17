@@ -1,2 +1,50 @@
-<h1>Gyms#show</h1>
-<p>Find me in app/views/gyms/show.html.erb</p>
+<h2>ジム詳細</h2>
+<%=@gym.name %>
+<h4>マシン一覧</h4>
+<% @machines.each do |machine| %>
+<%= machine.name %>
+<% end %>
+
+<h3>コメント一覧</h3>
+<% @gym.gym_comments.each do |gym_comment| %>
+<%= gym_comment.user.name %>
+<%= gym_comment.comment %>
+<div id="favorite_buttons_<%= gym_comment.id %>">
+<%= render partial: 'gyms/favorite',locals:{gym:@gym,gym_comment:gym_comment,favorite:gym_comment.favorites.find_by(user_id:current_user.id)} %>
+</div>
+
+<% if gym_comment.user == current_user%>
+<div>
+	<%= link_to "削除",gym_gym_comment_path(gym_comment.gym,gym_comment),method: :delete %>
+</div>
+<% end %>
+
+<% end %>
+
+<%= form_for [@gym,@gym_comment] do |f| %>
+	<div class="row">
+	<div class="col-sm-12">
+			<%= f.text_area :comment %>
+		</div>
+	</div>
+	<%= f.submit "送信する" %>
+	<% end %>
+
+	<h4>地図</h4>
+	<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIUJKjbrwk_AUnsjoEdD1U5KwghmjBgDQ&callback=initMap"></script>
+
+<script  type="text/javascript">
+  function initMap() {
+    var mapPosition = new google.maps.LatLng( <%= @gym.latitude %>,<%= @gym.longitude %> );//緯度経度
+    var map = new google.maps.Map(document.getElementById('gmap'), {
+    zoom: 17,//ズーム
+    center: mapPosition
+  });
+    var contentString = '住所：<%= @gym.address %>';
+    var marker = new google.maps.Marker({
+    position: mapPosition,
+    map: map
+    });
+  }
+</script>
+<div id="gmap"></div>

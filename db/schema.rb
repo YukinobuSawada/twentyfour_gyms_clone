@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_11_093408) do
+ActiveRecord::Schema.define(version: 2020_09_17_200612) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -38,11 +38,28 @@ ActiveRecord::Schema.define(version: 2020_09_11_093408) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "gym_comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "gym_comments", force: :cascade do |t|
+    t.text "comment"
+    t.integer "user_id"
+    t.integer "gym_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "gyms", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "machines", force: :cascade do |t|
@@ -50,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_093408) do
     t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "gym_id"
   end
 
   create_table "users", force: :cascade do |t|
