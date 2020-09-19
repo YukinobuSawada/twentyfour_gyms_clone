@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<script src="https://kit.fontawesome.com/547003d1bb.js" crossorigin="anonymous"></script>
 <html>
   <head>
     <title>TwentyfourGyms</title>
@@ -10,30 +11,37 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-    <header>
-      <div class="header-content">
-        <%= link_to '24gyms',root_path,class: "logo" %>
-        <ul class="flex">
+    
+    <header class="fixed-top">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+        <span class="header"><%= link_to '24gyms',root_path,class: "logo" %></span>
+      </nav>
+
+      <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
           <li><%= link_to 'ジム一覧', gyms_path %></li>
           <li><%= link_to 'マイページ', user_path(current_user)%></li>
           <li><%= link_to'当サイトについて', about_path%></li>
             <li><%= link_to 'ログアウト',destroy_user_session_path, method: :delete %></li>
-          </ul>
+          
+        <div class="form-inline my-2 my-lg-0">
+          検索
+          <%= search_form_for @search,url:gyms_path do |f| %>
+          <%= f.text_field :name_cont %>
+          <%= f.submit %>
+          <% end %>
         </div>
-      </header>
+       
       <% else %>
-      <header>
-        <div class="header-content">
-          <%= link_to '24gyms',root_path,class: "logo" %>
-          <ul class="flex">
-             <li><%= link_to 'ジム一覧',gyms_index_path %></li>
+             <li><%= link_to'当サイトについて', about_path%></li>
              <li><%= link_to'新規登録',new_user_registration_path %></li>
              <li><%= link_to'ログイン',new_user_session_path %></li>
            </ul>
-         </div>
+           <% end %>
+         </ul>
+       </div>
        </header>
-       <% end %>
 
 
 
