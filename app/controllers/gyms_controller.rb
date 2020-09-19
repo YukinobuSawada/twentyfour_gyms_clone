@@ -11,12 +11,12 @@ class GymsController < ApplicationController
   end
 
   def map
-    results = Geocoder.search(params[:address])
-    @latlng = results.first.coordinates
-    respond_to do |format|
-      format.js
+  #   results = Geocoder.search(params[:address])
+  #   @latlng = results.first.coordinates
+  #   respond_to do |format|
+  #     format.js
+  # end
   end
-end
 
   private
   def gym_params

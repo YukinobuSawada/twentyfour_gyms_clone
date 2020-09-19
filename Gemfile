@@ -72,4 +72,4 @@ gem 'pry-byebug', group: :development
 gem 'activeadmin'
 #gem 'rails-i18n', '~> 5.1'
 gem 'ransack'
-gem "geocoder"
+#gem "geocoder"
