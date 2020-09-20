@@ -11,40 +11,54 @@
   </head>
 
   <body>
-    
-    <header class="fixed-top">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg">
-        <span class="header"><%= link_to '24gyms',root_path,class: "logo" %></span>
-      </nav>
+    <% if user_signed_in? %>
+    <header>
+        <ul>
 
-      <ul class="nav navbar-nav navbar-right">
-      <% if user_signed_in? %>
-          <li><%= link_to 'ジム一覧', gyms_path %></li>
-          <li><%= link_to 'マイページ', user_path(current_user)%></li>
-          <li><%= link_to'当サイトについて', about_path%></li>
-            <li><%= link_to 'ログアウト',destroy_user_session_path, method: :delete %></li>
-          
-        <div class="form-inline my-2 my-lg-0">
-          検索
-          <%= search_form_for @search,url:gyms_path do |f| %>
-          <%= f.text_field :name_cont %>
-          <%= f.submit %>
+        <div class="menu-box">
+          <%= link_to root_path do %>
+          <%= image_tag 'img/24gym_logo.png',class: "logo" %>
           <% end %>
         </div>
-       
-      <% else %>
-             <li><%= link_to'当サイトについて', about_path%></li>
-             <li><%= link_to'新規登録',new_user_registration_path %></li>
-             <li><%= link_to'ログイン',new_user_session_path %></li>
-           </ul>
-           <% end %>
-         </ul>
-       </div>
-       </header>
+
+        <!-- 検索窓 -->
+        <div class="form-inline my-2 my-lg-0">店名検索
+          <%= search_form_for @search,url:gyms_path do |f| %>
+          <%= f.text_field :name_cont %>
+          <button type='submit' class="btn btn-outline-primary">検索</button>
+          <% end %>
+        </div>
 
 
+          <li><%= link_to 'ジム一覧', gyms_path, class:'nav-list' %></li>
+          <li><%= link_to 'マイページ', user_path(current_user), class:'nav-list'%></li>
+          <li><%= link_to'当サイトについて', about_path, class:'nav-list' %></li>
+          <li><%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class:'nav-list' %></li>
+        </ul>
+    </header>
+    <% else %>
+    <header>
+        <ul>
+
+        <div class="menu-box">
+          <%= link_to root_path do %>
+          <%= image_tag 'img/24gym_logo.png',class: "logo" %>
+          <% end %>
+        </div>
+
+          <li ><%= link_to'当サイトについて', about_path, class:'nav-list' %></li>
+          <li><%= link_to'新規登録',new_user_registration_path, class:'nav-list' %></li>
+          <li><%= link_to'ログイン',new_user_session_path, class:'nav-list' %></li>
+          <% end %>
+        </ul>
+      </header>
+
+
+      <div class="container-fluid">
+        <div class="row">
 
     <%= yield %>
+    </div>
+    </div>
   </body>
 </html>

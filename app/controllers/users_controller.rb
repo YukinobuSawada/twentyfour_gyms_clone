@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   def update
   end
 
-  def index
+  def top
+    @user = current_user
   end
 
   private
