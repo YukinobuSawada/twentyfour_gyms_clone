@@ -19,7 +19,9 @@
           <%= link_to root_path do %>
           <%= image_tag 'img/24gym_logo.png',class: "logo" %>
           <% end %>
+          <p>ようこそ<%=current_user.name%>さん！</p>
         </div>
+        
 
         <!-- 検索窓 -->
         <div class="form-inline my-2 my-lg-0">店名検索
@@ -52,13 +54,18 @@
           <% end %>
         </ul>
       </header>
-
-
+      <main>
       <div class="container-fluid">
         <div class="row">
-
-    <%= yield %>
-    </div>
-    </div>
-  </body>
-</html>
+          <% if notice %>
+          <p><%= notice %></p>
+          <% end %>
+          <% if alert %>
+          <p><%= alert %></p>
+          <% end %>
+              <%= yield %>
+            </div>
+          </div>
+        </main>
+      </body>
+      </html>

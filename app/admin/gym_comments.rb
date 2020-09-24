@@ -1,17 +1,16 @@
-ActiveAdmin.register Machine do
-  permit_params :name , :gym_id, :image_id
+ActiveAdmin.register GymComment do
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :name, :image_id
+  # permit_params :comment, :user_id, :gym_id
   #
   # or
   #
   # permit_params do
-  #   permitted = [:name, :image_id]
+  #   permitted = [:comment, :user_id, :gym_id]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end

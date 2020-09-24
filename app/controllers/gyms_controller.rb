@@ -1,6 +1,6 @@
 class GymsController < ApplicationController
   def index
-    @gyms = Gym.all
+    @gyms = Gym.page(params[:page]).per(4)
   end
 
   def show

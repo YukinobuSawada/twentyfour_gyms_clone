@@ -72,7 +72,7 @@ gem 'pry-byebug', group: :development
 gem 'activeadmin'
 #gem 'rails-i18n', '~> 5.1'
 gem 'ransack'
-#gem "geocoder"
+gem "geocoder"
 gem 'kaminari','~> 1.2.1'
 gem 'dotenv-rails'
 group :production do
