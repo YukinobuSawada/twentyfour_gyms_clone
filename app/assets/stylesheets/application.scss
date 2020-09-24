@@ -21,6 +21,9 @@
 	margin: 0 auto;
 }
 
+main{
+	margin-top:10px;
+}
 header {
 	width:100%;
 	height: 80px;
@@ -77,5 +80,19 @@ nav{
 }
 .about > div{
 	margin: 15px;
-	font-size: 15px
+	font-size: 15px;
+}
+
+button{
+	margin-top:15px;
+}
+.gym-show{
+	display:flex;
+	justify-content:center;
+}
+.gym-show > div:nth-child(1){
+	flex-grow: 1;
+}
+.gym-show > div:nth-child(2){
+	flex-grow: 1;
 }

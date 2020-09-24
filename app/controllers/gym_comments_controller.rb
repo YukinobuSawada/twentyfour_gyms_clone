@@ -5,9 +5,14 @@ class GymCommentsController < ApplicationController
 		gym_comments = gym.gym_comments
     	comment = current_user.gym_comments.new(gym_comment_params)
     	comment.gym_id = gym.id
-    	comment.save
-   		redirect_back(fallback_location: root_path)
-	end
+    	if comment.save
+    		flash[:notice] = "コメントを投稿しました"
+    		redirect_back(fallback_location: root_path)
+    	else
+    		flash[:alert] = "空欄のままでは投稿できません"
+    		redirect_back(fallback_location: root_path)
+    	end
+    end
 	def destroy
 		GymComment.find_by(id:params[:id],gym_id:params[:gym_id]).destroy
 		redirect_back(fallback_location: root_path)

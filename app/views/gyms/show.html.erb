@@ -1,10 +1,12 @@
-<h2>ジム詳細</h2>
-<%=@gym.name %>
-<h4>マシン一覧</h4>
+<h1 class="gym-name"><%=@gym.name %></h1>
+<div class="gym-show">
+  <div class="left-side">
+<h3>マシン一覧</h3>
 <% @machines.each do |machine| %>
 <%= machine.name %>
 <% end %>
-
+</div>
+<div class="right-side">
 <h3>コメント一覧</h3>
 <% @gym.gym_comments.each do |gym_comment| %>
 <%= gym_comment.user.name %>
@@ -24,10 +26,10 @@
 <%= form_for [@gym,@gym_comment] do |f| %>
 	<div class="row">
 	<div class="col-sm-12">
-			<%= f.text_area :comment %>
+			<%= f.text_area :comment,:placeholder=>"コメントを入力" %>
 		</div>
 	</div>
-	<%= f.submit "送信する" %>
+	<%= f.submit "投稿する" %>
 	<% end %>
 
 	<h4>地図</h4>
@@ -70,3 +72,5 @@
 </style>
 
 <div id="map"></div>
+</div>
+</div>
