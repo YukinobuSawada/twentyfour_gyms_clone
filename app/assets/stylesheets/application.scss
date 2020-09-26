@@ -96,3 +96,16 @@ button{
 .gym-show > div:nth-child(2){
 	flex-grow: 1;
 }
+footer {
+  background-size: contain;
+  background-position: bottom center;
+  border-top: ridge 6px #483d8b;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+.footer-text {
+  font-size: 20px;
+}
