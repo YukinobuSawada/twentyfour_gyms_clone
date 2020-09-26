@@ -3,7 +3,7 @@ lock "~> 3.14.1"
 
 set :application, "portfolio"
 set :repo_url, "git@github.com:YukinobuSawada/portfolio.git"
-set :deploy_to, "/home/ec2-user/portfolio/current"
+set :deploy_to, "/home/ec2-user/portfolio"
 set :rbenv_ruby, '2.5.7'
 set :linked_files, %w{config/master.key .env}
 append :linked_dirs, "log", "public", "tmp"
