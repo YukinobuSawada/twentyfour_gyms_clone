@@ -5,8 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-AdminUser.create!(email: 'sawada@kanri.com', password: 'aaaaaaaa', password_confirmation: 'aaaaaaaa') if Rails.env.production?
+
+AdminUser.create!(email: 'sawada@kanri.com', password: 'password', password_confirmation: 'password')
+
 Gym.create!(id:1,name:'原宿店',address:'東京都渋谷区神宮前1丁目', latitude: '35.6704049',longitude: '139.7034805',postal_code:'150-0001')
 Gym.create!(id:2,name:'渋谷店',address:'東京都渋谷区道玄坂1丁目',latitude: '35.6564473',longitude: '139.696958',postal_code:'150-0043')
 Gym.create!(id:3,name:'中野店',address:' 東京都中野区中野4丁目', latitude: '35.7060109',longitude: '139.6631932',postal_code:'164-8501')
