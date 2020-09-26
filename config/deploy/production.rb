@@ -60,3 +60,10 @@
 #     # password: "please use keys"
 #   }
 server '54.168.105.207', user: 'ec2-user', roles: %w{app web db}
+# ssh_options: {
+#        user: "YukinobuSawada", # overrides user setting above
+#        keys: %w(/home/user_name/.ssh/id_rsa),
+#        forward_agent: true
+#        #auth_methods: %w(publickey)
+# #     # password: "please use keys"
+#    }
