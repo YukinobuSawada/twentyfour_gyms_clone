@@ -15,7 +15,8 @@ class FavoritesController < ApplicationController
   	#redirect_back(fallback_location: root_path)
   end
 
-def gym_comment_params
+  private
+  def gym_comment_params
 	params.require(:gym_comment).permit(:comment, :user_id, :gym_id)
 end
 

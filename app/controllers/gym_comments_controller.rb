@@ -13,6 +13,7 @@ class GymCommentsController < ApplicationController
     		redirect_back(fallback_location: root_path)
     	end
     end
+    
 	def destroy
 		GymComment.find_by(id:params[:id],gym_id:params[:gym_id]).destroy
 		redirect_back(fallback_location: root_path)

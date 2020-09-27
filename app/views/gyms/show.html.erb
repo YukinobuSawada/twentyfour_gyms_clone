@@ -14,7 +14,7 @@
 <div id="favorite_buttons_<%= gym_comment.id %>">
 <%= render partial: 'gyms/favorite',locals:{gym:@gym,gym_comment:gym_comment,favorite:gym_comment.favorites.find_by(user_id:current_user.id)} %>
 </div>
-
+<!-- ログインしているユーザーが削除可能 -->
 <% if gym_comment.user == current_user%>
 <div>
 	<%= link_to "削除",gym_gym_comment_path(gym_comment.gym,gym_comment),method: :delete %>
@@ -22,7 +22,7 @@
 <% end %>
 
 <% end %>
-
+<!-- コメント入力欄 -->
 <%= form_for [@gym,@gym_comment] do |f| %>
 	<div class="row">
 	<div class="col-sm-12">
