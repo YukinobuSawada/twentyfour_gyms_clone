@@ -1,10 +1,12 @@
 <h1 class="gym-name"><%=@gym.name %></h1>
 <div class="gym-show">
   <div class="left-side">
-<h3>マシン一覧</h3>
+<h3 class="machine-index">マシン一覧</h3>
+<div class="machine-name">
 <% @machines.each do |machine| %>
 <%= machine.name %></br>
 <% end %>
+</div>
 </div>
 <div class="right-side">
 <h3>コメント一覧</h3>
