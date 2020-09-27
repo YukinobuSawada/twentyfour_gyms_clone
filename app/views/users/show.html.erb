@@ -11,15 +11,15 @@
 		</tr>
 		<tr>
 			<td>
-		<% if @user.id == current_user.id %>
-<p><%= link_to edit_user_path(@user) do %>
-	<button class= "btn btn-outline-primary">
-	プロフィール編集</button>
-<% end %>
-</p>
-<% end %>
-</td>
-<td></td>
-</tr>
+				<% if @user.id == current_user.id %>
+				<p><%= link_to edit_user_path(@user) do %>
+					<button class= "btn btn-primary">
+					プロフィール編集</button>
+					<% end %>
+				</p>
+				<% end %>
+			</td>
+			<td></td>
+		</tr>
 	</tbody>
 </table>

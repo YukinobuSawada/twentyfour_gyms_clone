@@ -12,19 +12,22 @@
 <% @search_gyms.each do |gym| %>
 <tr>
 	<td>
-<%= link_to gym_path(gym.id) do %>
-	<%= gym.name %>
-	<% end %>
-</td>
-<td>
-	<%=gym.postal_code %>
-</td>
-<td>
-	<%= gym.address %>
-</td>
-<td>
-	<%= gym.gym_comments.count %>
-</td>
-
-	<% end %>
-	<%= paginate @gyms %>
+		<%= link_to gym_path(gym.id) do %>
+		<%= gym.name %>
+		<% end %>
+			
+		</td>
+		<td>
+			<%=gym.postal_code %>
+				
+			</td>
+			<td>
+				<%= gym.address %>
+					
+				</td>
+				<td>
+					<%= gym.gym_comments.count %>
+						
+					</td>
+					<% end %>
+					<%= paginate @gyms %>
