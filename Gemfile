@@ -52,6 +52,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
+  gem 'rubocop-airbnb'
 end
 
 group :test do
@@ -71,15 +72,14 @@ gem 'dotenv-rails'
 gem 'ransack'
 gem 'rubocop-airbnb'
 gem 'pry-byebug', group: :development
-#gem 'activeadmin', github: 'activeadmin'
-#gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
+# gem 'activeadmin', github: 'activeadmin'
+# gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
 gem 'activeadmin'
-#gem 'rails-i18n', '~> 5.1'
+# gem 'rails-i18n', '~> 5.1'
 gem 'ransack'
 gem "geocoder"
-gem 'kaminari','~> 1.2.1'
+gem 'kaminari', '~> 1.2.1'
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
-
 end

@@ -20,5 +20,4 @@ class MachinesControllerTest < ActionDispatch::IntegrationTest
     get machines_index_url
     assert_response :success
   end
-
 end

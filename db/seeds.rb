@@ -8,9 +8,9 @@
 
 AdminUser.create!(email: 'sawada@kanri.com', password: 'password', password_confirmation: 'password')
 
-Gym.create!(id:1,name:'原宿店',address:'東京都渋谷区神宮前1丁目', latitude: '35.6704049',longitude: '139.7034805',postal_code:'150-0001')
-Gym.create!(id:2,name:'渋谷店',address:'東京都渋谷区道玄坂1丁目',latitude: '35.6564473',longitude: '139.696958',postal_code:'150-0043')
-Gym.create!(id:3,name:'中野店',address:' 東京都中野区中野4丁目', latitude: '35.7060109',longitude: '139.6631932',postal_code:'164-8501')
-Gym.create!(id:4,name:'上野店',address:' 東京都台東区東上野6丁目',latitude: '35.7182577',longitude: '139.7812875',postal_code:'110-0015')
-Gym.create!(id:5,name:'池袋店', address:'東京都豊島区池袋2丁目', latitude: '35.7326031',longitude: '139.706197',postal_code:'171-001')
-Gym.create!(id:6,name:'練馬店',address:'東京都練馬区春日町6丁目', latitude: '35.7538252',longitude: '139.706197',postal_code:'179-0074')
+Gym.create!(id: 1, name: '原宿店', address: '東京都渋谷区神宮前1丁目', latitude: '35.6704049', longitude: '139.7034805', postal_code: '150-0001')
+Gym.create!(id: 2, name: '渋谷店', address: '東京都渋谷区道玄坂1丁目', latitude: '35.6564473', longitude: '139.696958', postal_code: '150-0043')
+Gym.create!(id: 3, name: '中野店', address: ' 東京都中野区中野4丁目', latitude: '35.7060109', longitude: '139.6631932', postal_code: '164-8501')
+Gym.create!(id: 4, name: '上野店', address: ' 東京都台東区東上野6丁目', latitude: '35.7182577', longitude: '139.7812875', postal_code: '110-0015')
+Gym.create!(id: 5, name: '池袋店', address: '東京都豊島区池袋2丁目', latitude: '35.7326031', longitude: '139.706197', postal_code: '171-001')
+Gym.create!(id: 6, name: '練馬店', address: '東京都練馬区春日町6丁目', latitude: '35.7538252', longitude: '139.706197', postal_code: '179-0074')
