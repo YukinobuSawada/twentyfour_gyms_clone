@@ -30,5 +30,4 @@ class GymsControllerTest < ActionDispatch::IntegrationTest
     get gyms_update_url
     assert_response :success
   end
-
 end
