@@ -14,3 +14,5 @@ Gym.create!(id: 3, name: '中野店', address: ' 東京都中野区中野4丁目
 Gym.create!(id: 4, name: '上野店', address: ' 東京都台東区東上野6丁目', latitude: '35.7182577', longitude: '139.7812875', postal_code: '110-0015')
 Gym.create!(id: 5, name: '池袋店', address: '東京都豊島区池袋2丁目', latitude: '35.7326031', longitude: '139.706197', postal_code: '171-001')
 Gym.create!(id: 6, name: '練馬店', address: '東京都練馬区春日町6丁目', latitude: '35.7538252', longitude: '139.706197', postal_code: '179-0074')
+
+User.create!(email:'test@test.com', name:'山田太郎', password:'password')
