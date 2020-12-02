@@ -1,0 +1,33 @@
+<h2>検索結果</h2>
+
+<table class="table table-bordered">
+	<thead>
+	<tr>
+		<th>店名</th>
+		<th>郵便番号</th>
+		<th>住所</th>
+		<th>コメント数</th>
+	</tr>
+</thead>
+<% @search_gyms.each do |gym| %>
+<tr>
+	<td>
+		<%= link_to gym_path(gym.id) do %>
+		<%= gym.name %>
+		<% end %>
+			
+		</td>
+		<td>
+			<%=gym.postal_code %>
+				
+			</td>
+			<td>
+				<%= gym.address %>
+					
+				</td>
+				<td>
+					<%= gym.gym_comments.count %>
+						
+					</td>
+					<% end %>
+					<%= paginate @gyms %>

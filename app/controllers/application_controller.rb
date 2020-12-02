@@ -1,10 +1,13 @@
 class ApplicationController < ActionController::Base
-  before_action :set_search
+  #before_action :set_search
   before_action :configure_permitted_parameters, if: :devise_controller?
-  def set_search
-    @search = Gym.ransack(params[:q])
-    @search_gyms = @search.result.page(params[:page])
-  end
+  # def set_search
+    # @search = Gym.ransack(params[:q])
+    # @search_gyms = @search.result.page(params[:page])
+  # end
+def search
+	@gyms = Gyms.search(params[:search])
+end
 
   protected
 

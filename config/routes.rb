@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/search'
+  get 'search' => 'search#search'
   get 'favorites/create'
   get '/map_request', to: 'maps#map', as: 'map_request'
   get 'favorites/destroy'
