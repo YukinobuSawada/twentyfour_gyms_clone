@@ -5,6 +5,6 @@ class Gym < ApplicationRecord
   # geocoded_by :address
   #     after_validation :geocode, if: :address_changed?
   def self.search(search)
-  	Gym.where(['content LIKE ?', "%#{search}%"])
+  	Gym.where(['name LIKE ?', "%#{search}%"])
   end
 end

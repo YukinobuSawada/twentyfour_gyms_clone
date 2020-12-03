@@ -10,6 +10,8 @@ class GymsController < ApplicationController
     @gym_comments = @gym.gym_comments
   end
 
+
+  
   def map
     #   results = Geocoder.search(params[:address])
     #   @latlng = results.first.coordinates
