@@ -60,20 +60,20 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  #gem 'chromedriver-helper'
+  gem 'webdrivers', '~> 4.0'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data'
 gem 'devise'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
 gem 'dotenv-rails'
 gem 'ransack'
-gem 'rubocop-airbnb'
 gem 'pry-byebug', group: :development
 # gem 'activeadmin', github: 'activeadmin'
 # gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
@@ -82,7 +82,6 @@ gem 'activeadmin'
 # gem 'ransack'
 gem "geocoder"
 gem 'kaminari', '~> 1.2.1'
-gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
