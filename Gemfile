@@ -83,5 +83,5 @@ gem 'activeadmin'
 gem "geocoder"
 gem 'kaminari', '~> 1.2.1'
 group :production do
-  gem 'mysql2'
+  gem 'mysql2', '~>0.5.3'
 end
