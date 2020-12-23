@@ -13,7 +13,7 @@
   <body>
     <% if user_signed_in? %>
     <header>
-        
+        <ul>
 
         <div class="menu-box">
           <%= link_to root_path do %>
@@ -24,21 +24,22 @@
         
 
         <!-- 検索窓 -->
-        <div class="form-inline my-2 my-lg-0">店名検索
+        <div class="search my-2 my-lg-0 .px-5">
+        <div class="form-inline ">店名検索
           <%= form_tag(search_path,:method => 'get') do %>
           <%= text_field_tag :search %>
           <%= submit_tag '検索'%>
           <% end %>
-        
         </div>
+      </div>
 
 
           <div id="sp-menu">
-            <ul>
-          <li><%= link_to 'ジム一覧', gyms_path, class:'nav-list' %></li>
-          <li><%= link_to 'マイページ', user_path(current_user), class:'nav-list'%></li>
-          <li><%= link_to'当サイトについて', about_path, class:'nav-list' %></li>
-          <li><%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class:'nav-list' %></li>
+            
+          <li><a href="#"><%= link_to 'ジム一覧', gyms_path, class:'nav-list' %></a></li>
+          <li><a href="#"><%= link_to 'マイページ', user_path(current_user), class:'nav-list'%></a></li>
+          <li><a href="#"><%= link_to'当サイトについて', about_path, class:'nav-list' %></a></li>
+          <li><a href="#"><%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class:'nav-list' %></a></li>
         </ul>
       </div>
 
@@ -54,7 +55,7 @@
 
     <% else %>
     <header>
-        
+        <ul>
 
         <div class="menu-box">
           <%= link_to root_path do %>
@@ -63,14 +64,13 @@
         </div>
 
          <div id="sp-menu">
-        <ul>
-          <li ><%= link_to'当サイトについて', about_path, class:'nav-list' %></li>
+        
+          <li><%= link_to'当サイトについて', about_path, class:'nav-list' %></li>
           <li><%= link_to'新規登録',new_user_registration_path, class:'nav-list' %></li>
           <li><%= link_to'ログイン',new_user_session_path, class:'nav-list' %></li>
           <% end %>
         </ul>
       </div>
-
         <div id="hm-icon">
       <a class="menu-trigger" href="#">
         <span></span>
